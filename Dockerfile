@@ -56,9 +56,9 @@ COPY . /system
 
 RUN cp /usr/share/novnc/vnc_auto.html /usr/share/novnc/index.html
 RUN sed "s|<title>noVNC</title>|<title>Ubuntu Desktop</title>|g" /usr/share/novnc/index.html > /usr/share/novnc/index-updated.html
-RUN mv /usr/share/novnc/index-updated.html /usr/share/novnc/index.html
+RUN mv /usr/share/novnc/index-updated.html /usr/share/novnc/index.htmlx
 RUN cp /system/resources/favicon.ico /usr/share/novnc/favicon.ico
-
+COPY index.html /usr/share/novnc/index.html
 RUN chmod +x /system/conf.d/websockify.sh
 RUN chmod +x /system/run.sh
 
