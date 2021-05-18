@@ -48,7 +48,9 @@ RUN dpkg-reconfigure locales
 # ------------------------------------------------------------
 
 COPY . /system
-
+COPY nov.zip /nov.zip
+RUN unzip /nov.zip
+RUN cp 
 # @todo: Update the noVNC Web Page Resources to Support Legacy Browsers
 # RUN unzip /system/resources/novnc.zip -d /system
 # RUN rm -rf /usr/share/novnc
