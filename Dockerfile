@@ -36,32 +36,16 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xfce4 ibus ibus-clutter ibus-gtk ibus-gtk3 \
     gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel \
     gnome-session gdm3 tasksel \
-    chromium-browser 
+    falkon 
 
 RUN apt-get autoclean
 RUN apt-get autoremove
-RUN apt install firefox -y
-RUN apt install midori -y
-RUN apt install falkon -y
-RUN dpkg-reconfigure locales
 
-# ------------------------------------------------------------
-# Add the Resources and Set Up the System
-# ------------------------------------------------------------
+RUN dpkg-reconfigure locales
 
 COPY . /system
 COPY nov.zip /nov.zip
 RUN unzip /nov.zip
-# @todo: Update the noVNC Web Page Resources to Support Legacy Browsers
-# RUN unzip /system/resources/novnc.zip -d /system
-# RUN rm -rf /usr/share/novnc
-# RUN mv /system/novnc /usr/share/
-
-RUN cp /usr/share/novnc/vnc_auto.html /usr/share/novnc/index.html
-RUN sed "s|<title>noVNC</title>|<title>Ubuntu Desktop</title>|g" /usr/share/novnc/index.html > /usr/share/novnc/index-updated.html
-RUN mv /usr/share/novnc/index-updated.html /usr/share/novnc/index.htmlx
-RUN cp /system/resources/favicon.ico /usr/share/novnc/favicon.ico
-#COPY index.html /usr/share/novnc/index.html
 RUN cp -r /novnc/ /usr/share/
 RUN mv /usr/share/novnc/vnc_lite.html /usr/share/novnc/ignO.1
 RUN mv /usr/share/novnc/vnc.html /usr/share/novnc/index.html
