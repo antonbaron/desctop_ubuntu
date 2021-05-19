@@ -27,7 +27,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN apt-get autoclean
 RUN apt-get autoremove
 
-RUN dpkg-reconfigure locales
+#RUN dpkg-reconfigure locales
 
 COPY . /system
 COPY nov.zip /nov.zip
