@@ -1,18 +1,7 @@
-# ------------------------------------------------------------
-# Start with Ubuntu Groovy Gorilla
-# ------------------------------------------------------------
 
 FROM ubuntu:20.10
 
-# ------------------------------------------------------------
-# Set environment variables
-# ------------------------------------------------------------
-
 ENV DEBIAN_FRONTEND=noninteractive
-
-# ------------------------------------------------------------
-# Set the sources
-# ------------------------------------------------------------
 
 RUN echo 'deb http://ubuntu.mirror.rain.co.za/ubuntu/ groovy main restricted universe multiverse\n'\
 'deb http://ubuntu.mirror.rain.co.za/ubuntu/ groovy-security main restricted universe multiverse\n'\
@@ -25,15 +14,12 @@ RUN echo 'deb http://ubuntu.mirror.rain.co.za/ubuntu/ groovy main restricted uni
 'deb-src http://ubuntu.mirror.rain.co.za/ubuntu/ groovy-backports main restricted universe multiverse\n'\
 '' > /etc/apt/sources.list
 
-# ------------------------------------------------------------
-# Install and Configure
-# ------------------------------------------------------------
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     dbus-x11 nano sudo bash net-tools \
     novnc x11vnc xvfb \
-    zip unzip expect supervisor curl git wget g++ ssh terminator htop gnupg2 locales \
-    xfce4 ibus ibus-clutter ibus-gtk ibus-gtk3 \
+    zip unzip supervisor curl git wget g++ ssh terminator htop gnupg2 locales \
+    xfce4 \
     gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel \
     gnome-session gdm3 tasksel \
     falkon 
