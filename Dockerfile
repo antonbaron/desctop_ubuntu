@@ -40,7 +40,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 RUN apt-get autoclean
 RUN apt-get autoremove
-
+RUN apt install firefox -y
 RUN dpkg-reconfigure locales
 
 # ------------------------------------------------------------
