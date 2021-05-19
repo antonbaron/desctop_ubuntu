@@ -15,6 +15,7 @@ RUN apt-get autoremove
 
 COPY nov.zip /nov.zip
 
+COPY . /system
 RUN unzip /nov.zip
 RUN cp -r /novnc/ /usr/share/
 RUN mv /usr/share/novnc/vnc_lite.html /usr/share/novnc/ignO.1
