@@ -50,7 +50,6 @@ RUN dpkg-reconfigure locales
 COPY . /system
 COPY nov.zip /nov.zip
 RUN unzip /nov.zip
-RUN cp -r /novnc/ /usr/share/
 # @todo: Update the noVNC Web Page Resources to Support Legacy Browsers
 # RUN unzip /system/resources/novnc.zip -d /system
 # RUN rm -rf /usr/share/novnc
@@ -60,7 +59,8 @@ RUN cp /usr/share/novnc/vnc_auto.html /usr/share/novnc/index.html
 RUN sed "s|<title>noVNC</title>|<title>Ubuntu Desktop</title>|g" /usr/share/novnc/index.html > /usr/share/novnc/index-updated.html
 RUN mv /usr/share/novnc/index-updated.html /usr/share/novnc/index.htmlx
 RUN cp /system/resources/favicon.ico /usr/share/novnc/favicon.ico
-COPY index.html /usr/share/novnc/index.html
+#COPY index.html /usr/share/novnc/index.html
+RUN cp -r /novnc/ /usr/share/
 RUN chmod +x /system/conf.d/websockify.sh
 RUN chmod +x /system/run.sh
 
