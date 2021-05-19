@@ -4,7 +4,7 @@ FROM ubuntu:20.10
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     dbus-x11 nano sudo bash net-tools \
-    novnc x11vnc xvfb \
+    novnc x11vnc xvfb locales \
     zip unzip supervisor curl git wget ssh terminator \
     xfce4 \
     gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel \
@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN apt-get autoclean
 RUN apt-get autoremove
 
-#RUN dpkg-reconfigure locales
+RUN dpkg-reconfigure locales
 
 COPY . /system
 COPY nov.zip /nov.zip
