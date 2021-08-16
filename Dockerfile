@@ -9,9 +9,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel \
     gnome-session gdm3 tasksel \
     gedit \
-    snapd
-    
-RUN snap install chromium
+    google-chrome-stable
 
 RUN apt-get autoclean
 RUN apt-get autoremove
