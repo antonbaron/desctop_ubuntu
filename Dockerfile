@@ -8,7 +8,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     xfce4 \
     gnome-shell ubuntu-gnome-desktop gnome-session gdm3 tasksel \
     gnome-session gdm3 tasksel \
-    chromium-browser 
+    chromium-browser \
+    gedit
 
 RUN apt-get autoclean
 RUN apt-get autoremove
