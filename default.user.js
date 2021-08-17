@@ -6,23 +6,28 @@
 // @description  try to take over the world!
 // @author       You
 // @match        *://*/*
-// @require https://code.jquery.com/jquery-3.6.0.min.js
-// @grant        GM_addStyle
+// @grant        none
 // ==/UserScript==
 
 (function() {
   var __machineID = '<<MACHINEID>>';
+    function addStyle(styles) {
+    if(document.getElementsByTagName("head")[0] && document && document.createElement) {
+        var css = document.createElement('style');
+        css.type = 'text/css';
+        if (css.styleSheet) css.styleSheet.cssText = styles;
+        else  css.appendChild(document.createTextNode(styles));
+        document.getElementsByTagName("head")[0].appendChild(css);
+        } else setTimeout(function(){addStyle(styles);},10);
+    }
+  addStyle("svg,img{display: none !important; visibility: hidden !important} *{background-image:none !important}");
 
-  GM_addStyle("svg,img{display: none !important; visibility: hidden !important} *{background-image:none !important}");
 
-  //var o = XMLHttpRequest.prototype.open;
-  //XMLHttpRequest.prototype.open = function(){
-  //  var res = o.apply(this, arguments);
-  //  this.setRequestHeader('__mid', '<<MACHINEID>>');
-  //  return res;
-  //}
+  var oReq = new XMLHttpRequest();
 
-  fetch('https://parser.shiva-property.dev.daturum.ru/__developer/public_viewer/start/next_step.json?__mid='+__machineID)
-    .then(response => response.json())
-    .then(data => console.log(data));
+  oReq.onload = function(e) {
+    console.log(oReq.responseText);
+  }
+  oReq.open("GET", 'https://parser.shiva-property.dev.daturum.ru/__developer/public_viewer/start/next_step.json?__mid='+__machineID);
+  oReq.send();
 })();
