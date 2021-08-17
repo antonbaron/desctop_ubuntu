@@ -12,7 +12,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     gedit \
     falkon
 
-RUN mkdir --parents /.config/falkon/profiles/default; mv resources/_falkon-profiles-default-settings.ini $_
+RUN mkdir -p /.config/falkon/profiles/default
+RUN mv resources/_falkon-profiles-default-settings.ini /.config/falkon/profiles/default
 
 RUN apt-get autoclean
 RUN apt-get autoremove
