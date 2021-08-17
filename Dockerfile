@@ -13,7 +13,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     falkon
 
 RUN mkdir -p /.config/falkon/profiles/default
-RUN mv resources/_falkon-profiles-default-settings.ini /.config/falkon/profiles/default
+RUN cp falkon.ini /.config/falkon/profiles/default
 
 RUN apt-get autoclean
 RUN apt-get autoremove
