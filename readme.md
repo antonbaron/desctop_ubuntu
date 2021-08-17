@@ -1,20 +1,6 @@
-# Ubuntu Desktop on Heroku
-
-A [Heroku](https://www.heroku.com/) install of [Ubuntu 20.10 (Groovy Gorilla)](https://releases.ubuntu.com/20.10/), with the [XFCE desktop environment](https://www.xfce.org/) and [VNC](https://en.wikipedia.org/wiki/Virtual_Network_Computing).
-
-Do an automated deploy to Heroku:
+# Ubuntu 
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
-
-## Built With
-
-- [noVNC](https://novnc.com/)
-
-## Run Locally
-
-Install [Docker](https://docs.docker.com).
-
-Build and run the container with Docker.
 
 ## Deploy to Heroku
 
