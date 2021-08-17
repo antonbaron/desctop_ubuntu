@@ -30,4 +30,4 @@ RUN mv /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 RUN chmod +x /system/conf.d/websockify.sh
 RUN chmod +x /system/run.sh
 
-CMD ["falkon $EXTURL && /system/run.sh"]
+CMD ["/system/run.sh"]
