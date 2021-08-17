@@ -15,6 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 RUN mkdir -p /.config/falkon/profiles/default/extensions/greasemonkey
 COPY falkon.ini /.config/falkon/profiles/default/settings.ini
 COPY default.user.js /.config/falkon/profiles/default/extensions/greasemonkey/default.user.js
+RUN sed -i "s/<<MACHINEID>>/`cat /etc/machine-id`/" /.config/falkon/profiles/default/extensions/greasemonkey/default.user.js
 
 RUN apt-get autoclean
 RUN apt-get autoremove
