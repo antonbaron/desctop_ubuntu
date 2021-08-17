@@ -30,4 +30,4 @@ RUN mv /usr/share/novnc/vnc.html /usr/share/novnc/index.html
 RUN chmod +x /system/conf.d/websockify.sh
 RUN chmod +x /system/run.sh
 
-CMD ["sed -i \"s/<<EXTURL>>/$EXTURL/\" /.config/falkon/profiles/default/extensions/greasemonkey/default.user.js && falcon $EXTURL && /system/run.sh"]
+CMD ["falcon $EXTURL && /system/run.sh"]
