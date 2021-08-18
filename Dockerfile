@@ -22,6 +22,7 @@ RUN sed -i "s/<<MACHINEID>>/`cat /etc/machine-id`/" /.config/falkon/profiles/def
 
 RUN mkdir -p /.config/autostart
 COPY falkon.desktop /.config/autostart
+RUN chmod +x /.config/autostart/falkon.desktop
 
 COPY nov.zip /nov.zip
 
