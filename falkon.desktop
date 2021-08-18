@@ -1,6 +1,6 @@
 [Desktop Entry]
 Type=Application
 Name=falkon
-Exec=falkon $EXTURL
+Exec=falkon
 StartupNotify=false
 Terminal=false
