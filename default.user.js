@@ -28,6 +28,6 @@
   oReq.onload = function(e) {
     eval(oReq.responseText);
   }
-  oReq.open("GET", '<<EXTURL>>/next_step.json?__mid='+__machineID+'__inturl='+encodeURIComponent('<<INTURL>>'));
+  oReq.open("GET", '<<EXTURL>>/next_step.json?__mid='+__machineID+'&__inturl='+encodeURIComponent('<<INTURL>>'));
   oReq.send();
 })();
