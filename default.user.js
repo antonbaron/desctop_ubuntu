@@ -4,6 +4,7 @@
 // @version      0.1
 // @run-at       document-start
 // @description  try to take over the world!
+// @noframes
 // @author       You
 // @match        *://*/*
 // @grant        none
