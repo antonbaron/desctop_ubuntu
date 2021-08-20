@@ -7,7 +7,7 @@
 // @noframes
 // @author       You
 // @match        *://*/*
-// @grant        none
+// @grant        GM_xmlhttpRequest
 // ==/UserScript==
 
 (function() {
